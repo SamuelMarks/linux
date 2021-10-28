@@ -38,7 +38,7 @@ static int kgdb_transition_check(char *buffer)
 		KDB_STATE_SET(KGDB_TRANS);
 		kdb_printf("%s", buffer);
 	} else {
-		int slen = strlen(buffer);
+		const size_t slen = strlen(buffer);
 		if (slen > 3 && buffer[slen - 3] == '#') {
 			kdb_gdb_state_pass(buffer);
 			strcpy(buffer, "kgdb");

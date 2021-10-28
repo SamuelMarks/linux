@@ -101,9 +101,9 @@ static nokprobe_inline bool trace_kprobe_has_gone(struct trace_kprobe *tk)
 }
 
 static nokprobe_inline bool trace_kprobe_within_module(struct trace_kprobe *tk,
-						 struct module *mod)
+						       struct module *mod)
 {
-	int len = strlen(module_name(mod));
+	const size_t len = strlen(module_name(mod));
 	const char *name = trace_kprobe_symbol(tk);
 
 	return strncmp(module_name(mod), name, len) == 0 && name[len] == ':';

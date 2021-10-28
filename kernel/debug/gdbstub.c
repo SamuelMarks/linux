@@ -770,7 +770,7 @@ static void gdb_cmd_query(struct kgdb_state *ks)
 #ifdef CONFIG_KGDB_KDB
 	case 'R':
 		if (strncmp(remcom_in_buffer, "qRcmd,", 6) == 0) {
-			int len = strlen(remcom_in_buffer + 6);
+			size_t len = strlen(remcom_in_buffer + 6);
 
 			if ((len % 2) != 0) {
 				strcpy(remcom_out_buffer, "E01");

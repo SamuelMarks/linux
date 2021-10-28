@@ -2561,7 +2561,7 @@ static void update_event_printk(struct trace_event_call *call,
 {
 	char *ptr;
 	int quote = 0;
-	int len = strlen(map->eval_string);
+	const size_t len = strlen(map->eval_string);
 
 	for (ptr = call->print_fmt; *ptr; ptr++) {
 		if (*ptr == '\\') {

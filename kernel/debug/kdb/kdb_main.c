@@ -197,7 +197,7 @@ static inline bool kdb_check_flags(kdb_cmdflags_t flags, int permissions,
 char *kdbgetenv(const char *match)
 {
 	char **ep = __env;
-	int matchlen = strlen(match);
+	const size_t matchlen = strlen(match);
 	int i;
 
 	for (i = 0; i < __nenv; i++) {

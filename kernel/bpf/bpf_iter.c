@@ -332,7 +332,7 @@ bool bpf_iter_prog_supported(struct bpf_prog *prog)
 	u32 prog_btf_id = prog->aux->attach_btf_id;
 	const char *prefix = BPF_ITER_FUNC_PREFIX;
 	struct bpf_iter_target_info *tinfo;
-	int prefix_len = strlen(prefix);
+	size_t prefix_len = strlen(prefix);
 	bool supported = false;
 
 	if (strncmp(attach_fname, prefix, prefix_len))

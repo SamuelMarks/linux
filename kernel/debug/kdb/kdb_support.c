@@ -126,7 +126,8 @@ static char ks_namebuf[KSYM_NAME_LEN+1], ks_namebuf_prev[KSYM_NAME_LEN+1];
 int kallsyms_symbol_complete(char *prefix_name, int max_len)
 {
 	loff_t pos = 0;
-	int prefix_len = strlen(prefix_name), prev_len = 0;
+	const size_t prefix_len = strlen(prefix_name)
+        int prev_len = 0;
 	int i, number = 0;
 	const char *name;
 
